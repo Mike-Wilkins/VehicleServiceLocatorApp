@@ -1,3 +1,4 @@
+using DataLayer.Repositories;
 using DataLayer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,7 @@ namespace CoreMVC
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["VehicleServiceDbContext"]));
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+            services.AddScoped<IVehicleServiceRepository, SQLVehicleServiceRepository>();
             services.AddControllersWithViews();
         }
 
