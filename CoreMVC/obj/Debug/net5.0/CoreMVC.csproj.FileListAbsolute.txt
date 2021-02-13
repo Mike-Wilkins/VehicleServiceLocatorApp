@@ -148,3 +148,4 @@ C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\obj\Debug\net5.0\Razor\Views\VehicleService\Index.cshtml.g.cs
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\obj\Debug\net5.0\Razor\Views\VehicleService\Create.cshtml.g.cs
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\obj\Debug\net5.0\Razor\Views\VehicleService\Delete.cshtml.g.cs
