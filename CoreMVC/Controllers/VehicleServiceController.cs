@@ -42,13 +42,13 @@ namespace CoreMVC.Controllers
             return View("Index", vehicleServiceList);
         }
 
-        //GET: VehicleService/ Delete
+        //GET: VehicleService/Delete
         public async Task<IActionResult> Delete(int id)
         {
             var vehicleService = await _db.GetService(id);
             return View(vehicleService);
         }
-        //POST: VehicleService/ Delete
+        //POST: VehicleService/Delete
         [HttpPost]
         [ActionName("Delete")]
         public async Task<IActionResult> DeleteService(int id)
@@ -56,6 +56,22 @@ namespace CoreMVC.Controllers
             await _db.Delete(id);
             var vehicleServiceList = await _db.GetAllServices();
             return View("Index", vehicleServiceList);
+        }
+
+        //GET: VehicleService/Edit
+        public async Task<IActionResult> Update(int id)
+        {
+            var updateVehicleService = await _db.GetService(id);
+            return View(updateVehicleService);
+        }
+
+        //POST: VehicleService/Edit
+        [HttpPost]
+        public async Task<IActionResult> Update(VehicleService vehicleService)
+        {
+            _db.Update(vehicleService);
+            var vehicleserviceList = await _db.GetAllServices();
+            return View("Index", vehicleserviceList);
         }
     }
 }
