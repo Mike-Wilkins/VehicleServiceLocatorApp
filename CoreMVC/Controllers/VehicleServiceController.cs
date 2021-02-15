@@ -70,7 +70,9 @@ namespace CoreMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(VehicleService vehicleService)
         {
-            _db.Update(vehicleService);
+            var vehicleServiceLatLng = await _geocoding.ConvertPostcode(vehicleService);
+
+            _db.Update(vehicleServiceLatLng);
             var vehicleserviceList = await _db.GetAllServices();
             return View("Index", vehicleserviceList);
         }
