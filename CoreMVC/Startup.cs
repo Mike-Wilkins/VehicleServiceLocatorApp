@@ -29,6 +29,7 @@ namespace CoreMVC
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["VehicleServiceDbContext"]));
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
             services.AddScoped<IVehicleServiceRepository, SQLVehicleServiceRepository>();
+            services.AddScoped<IGeocodingRepository, GeocodingRepository>();
             services.AddControllersWithViews();
         }
 

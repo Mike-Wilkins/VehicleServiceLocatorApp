@@ -1,9 +1,6 @@
 ﻿using DataLayer.Models;
 using DataLayer.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CoreMVC.Controllers
@@ -11,10 +8,12 @@ namespace CoreMVC.Controllers
     public class VehicleServiceController : Controller
     {
         private IVehicleServiceRepository _db;
+        private IGeocodingRepository _geocoding;
 
-        public VehicleServiceController(IVehicleServiceRepository db)
+        public VehicleServiceController(IVehicleServiceRepository db, IGeocodingRepository geocoding)
         {
             _db = db;
+            _geocoding = geocoding;
         }
         public async Task<IActionResult> Index()
         {
@@ -37,7 +36,9 @@ namespace CoreMVC.Controllers
                 return View();
             }
 
-            await _db.Add(vehicleService);
+            var vehicleServiceLatLng = await _geocoding.ConvertPostcode(vehicleService);
+
+            await _db.Add(vehicleServiceLatLng);
             var vehicleServiceList = await _db.GetAllServices();
             return View("Index", vehicleServiceList);
         }
