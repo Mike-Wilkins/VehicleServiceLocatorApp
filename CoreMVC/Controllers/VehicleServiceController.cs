@@ -1,6 +1,7 @@
 ﻿using DataLayer.Models;
 using DataLayer.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CoreMVC.Controllers
@@ -75,6 +76,22 @@ namespace CoreMVC.Controllers
             _db.Update(vehicleServiceLatLng);
             var vehicleserviceList = await _db.GetAllServices();
             return View("Index", vehicleserviceList);
+        }
+
+      
+        public async Task<IActionResult> Search(string query){
+
+            var vehicleServiceList = await _db.GetSearchServices(query);
+
+            var result = vehicleServiceList.Count();
+
+            if (result == 0)
+            {
+                var serviceList = await _db.GetAllServices();
+                return View("Index", serviceList);
+            }
+
+            return View("Index", vehicleServiceList);
         }
     }
 }
