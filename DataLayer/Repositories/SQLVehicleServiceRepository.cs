@@ -39,6 +39,13 @@ namespace DataLayer.Repositories
             return vehicleServiceList;
         }
 
+        public async Task<IEnumerable<VehicleService>> GetSearchServices(string query)
+        {
+            var vehicleServiceList = await _context.VehicleServices.Where(m => m.Name.Contains(query)).ToListAsync();
+
+            return vehicleServiceList;
+        }
+
         public async Task<VehicleService> GetService(int id)
         {
             var vehicleService = await _context.VehicleServices.Where(m => m.Id == id).FirstOrDefaultAsync();

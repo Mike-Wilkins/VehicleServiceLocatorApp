@@ -13,5 +13,6 @@ namespace DataLayer.Repositories
         VehicleService Update(VehicleService vehicleService);
         Task<VehicleService> GetService(int id);
         Task<IEnumerable<VehicleService>> GetAllServices();
+        Task<IEnumerable<VehicleService>> GetSearchServices(string query);
     }
 }
