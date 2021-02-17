@@ -1,7 +1,5 @@
 ﻿using DataLayer.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DataLayer.Repositories
@@ -13,6 +11,6 @@ namespace DataLayer.Repositories
         VehicleService Update(VehicleService vehicleService);
         Task<VehicleService> GetService(int id);
         Task<IEnumerable<VehicleService>> GetAllServices(int? page);
-        Task<IEnumerable<VehicleService>> GetSearchServices(string query);
+        Task<IEnumerable<VehicleService>> GetSearchServices(string query, int? page);
     }
 }
