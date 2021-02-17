@@ -152,3 +152,14 @@ C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\obj\Debug\net5.0\Razor\Views\VehicleService\Update.cshtml.g.cs
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\Geocoding.Core.dll
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\Geocoding.Google.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\EntityFramework.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\X.PagedList.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\PagedList.EntityFramework.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\bin\Debug\net5.0\X.PagedList.Web.Common.dll
+C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\CoreMVC\obj\Debug\net5.0\CoreMVC.MvcApplicationPartsAssemblyInfo.cs

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace DataLayer.Repositories
 {
@@ -33,11 +34,14 @@ namespace DataLayer.Repositories
             return vehicleService;
         }
 
-        public async Task<IEnumerable<VehicleService>> GetAllServices()
+        public async Task<IEnumerable<VehicleService>> GetAllServices(int? page)
         {
-            var vehicleServiceList = await _context.VehicleServices.OrderBy(m => m.Name).ToListAsync();
+            //var vehicleServiceList = await _context.VehicleServices.OrderBy(m => m.Name).ToListAsync();
+            var pageNumber = page ?? 1;
+            var vehicleServiceList = await _context.VehicleServices.OrderBy(m => m.Name).ToPagedListAsync(pageNumber, 5);
             return vehicleServiceList;
         }
+
 
         public async Task<IEnumerable<VehicleService>> GetSearchServices(string query)
         {

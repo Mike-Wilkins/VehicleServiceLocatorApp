@@ -3,6 +3,7 @@ using DataLayer.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace CoreMVC.Controllers
 {
@@ -16,9 +17,9 @@ namespace CoreMVC.Controllers
             _db = db;
             _geocoding = geocoding;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-            var vehicleServiceList = await _db.GetAllServices();
+            var vehicleServiceList = await _db.GetAllServices(page);
             return View(vehicleServiceList);
         }
 
@@ -30,7 +31,7 @@ namespace CoreMVC.Controllers
 
         [HttpPost]
         //POST: VehicleService/Create
-        public async Task<IActionResult> Create(VehicleService vehicleService)
+        public async Task<IActionResult> Create(VehicleService vehicleService, int? page)
         {
             if (!ModelState.IsValid)
             {
@@ -40,7 +41,7 @@ namespace CoreMVC.Controllers
             var vehicleServiceLatLng = await _geocoding.ConvertPostcode(vehicleService);
 
             await _db.Add(vehicleServiceLatLng);
-            var vehicleServiceList = await _db.GetAllServices();
+            var vehicleServiceList = await _db.GetAllServices(page);
             return View("Index", vehicleServiceList);
         }
 
@@ -53,10 +54,10 @@ namespace CoreMVC.Controllers
         //POST: VehicleService/Delete
         [HttpPost]
         [ActionName("Delete")]
-        public async Task<IActionResult> DeleteService(int id)
+        public async Task<IActionResult> DeleteService(int id, int? page)
         {
             await _db.Delete(id);
-            var vehicleServiceList = await _db.GetAllServices();
+            var vehicleServiceList = await _db.GetAllServices(page);
             return View("Index", vehicleServiceList);
         }
 
@@ -69,17 +70,17 @@ namespace CoreMVC.Controllers
 
         //POST: VehicleService/Edit
         [HttpPost]
-        public async Task<IActionResult> Update(VehicleService vehicleService)
+        public async Task<IActionResult> Update(VehicleService vehicleService, int? page)
         {
             var vehicleServiceLatLng = await _geocoding.ConvertPostcode(vehicleService);
 
             _db.Update(vehicleServiceLatLng);
-            var vehicleserviceList = await _db.GetAllServices();
+            var vehicleserviceList = await _db.GetAllServices(page);
             return View("Index", vehicleserviceList);
         }
 
       
-        public async Task<IActionResult> Search(string query){
+        public async Task<IActionResult> Search(string query, int? page){
 
             var vehicleServiceList = await _db.GetSearchServices(query);
 
@@ -87,7 +88,7 @@ namespace CoreMVC.Controllers
 
             if (result == 0)
             {
-                var serviceList = await _db.GetAllServices();
+                var serviceList = await _db.GetAllServices(page);
                 return View("Index", serviceList);
             }
 
