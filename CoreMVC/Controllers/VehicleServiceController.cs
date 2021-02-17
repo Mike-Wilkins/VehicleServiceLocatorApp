@@ -3,7 +3,6 @@ using DataLayer.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
-using X.PagedList;
 
 namespace CoreMVC.Controllers
 {
@@ -79,10 +78,11 @@ namespace CoreMVC.Controllers
             return View("Index", vehicleserviceList);
         }
 
-      
-        public async Task<IActionResult> Search(string query, int? page){
+        //GET: VehicleService/Search
+        public async Task<IActionResult> Search(string query, int? page)
+        {
 
-            var vehicleServiceList = await _db.GetSearchServices(query);
+            var vehicleServiceList = await _db.GetSearchServices(query, page);
 
             var result = vehicleServiceList.Count();
 

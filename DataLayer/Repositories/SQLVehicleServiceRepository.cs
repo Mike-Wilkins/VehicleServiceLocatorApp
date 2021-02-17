@@ -1,10 +1,8 @@
 ﻿using DataLayer.Models;
 using DataLayer.Services;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using X.PagedList;
 
@@ -36,17 +34,16 @@ namespace DataLayer.Repositories
 
         public async Task<IEnumerable<VehicleService>> GetAllServices(int? page)
         {
-            //var vehicleServiceList = await _context.VehicleServices.OrderBy(m => m.Name).ToListAsync();
             var pageNumber = page ?? 1;
             var vehicleServiceList = await _context.VehicleServices.OrderBy(m => m.Name).ToPagedListAsync(pageNumber, 5);
             return vehicleServiceList;
         }
 
 
-        public async Task<IEnumerable<VehicleService>> GetSearchServices(string query)
+        public async Task<IEnumerable<VehicleService>> GetSearchServices(string query, int? page)
         {
-            var vehicleServiceList = await _context.VehicleServices.Where(m => m.Name.Contains(query)).ToListAsync();
-
+            var pageNumber = page ?? 1;
+            var vehicleServiceList = await _context.VehicleServices.Where(m => m.Name.Contains(query)).ToPagedListAsync(pageNumber, 5);
             return vehicleServiceList;
         }
 
