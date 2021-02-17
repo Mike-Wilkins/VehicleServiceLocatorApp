@@ -35,7 +35,7 @@ namespace DataLayer.Repositories
 
         public async Task<IEnumerable<VehicleService>> GetAllServices()
         {
-            var vehicleServiceList = await _context.VehicleServices.OrderBy(m => m.Id).ToListAsync();
+            var vehicleServiceList = await _context.VehicleServices.OrderBy(m => m.Name).ToListAsync();
             return vehicleServiceList;
         }
 
