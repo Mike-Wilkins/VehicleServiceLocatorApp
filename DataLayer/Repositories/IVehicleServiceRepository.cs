@@ -12,7 +12,7 @@ namespace DataLayer.Repositories
         Task<VehicleService> Delete(int id);
         VehicleService Update(VehicleService vehicleService);
         Task<VehicleService> GetService(int id);
-        Task<IEnumerable<VehicleService>> GetAllServices();
+        Task<IEnumerable<VehicleService>> GetAllServices(int? page);
         Task<IEnumerable<VehicleService>> GetSearchServices(string query);
     }
 }
