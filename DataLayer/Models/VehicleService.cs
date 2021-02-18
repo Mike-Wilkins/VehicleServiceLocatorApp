@@ -18,6 +18,7 @@ namespace DataLayer.Models
         public string Website { get; set; }
 
         [Required]
+        [RegularExpression("^([A-Z]{1,2})([0-9][0-9A-Z]?) ([0-9])([ABDEFGHJLNPQRSTUWXYZ]{2})$", ErrorMessage = "Postcode not recognised")]
         public string Postcode { get; set; }
 
         public double Latitude { get; set; }
