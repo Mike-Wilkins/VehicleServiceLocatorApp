@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace DataLayer.Models
@@ -21,5 +22,7 @@ namespace DataLayer.Models
 
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+
+       
     }
 }
