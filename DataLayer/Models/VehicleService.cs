@@ -25,5 +25,7 @@ namespace DataLayer.Models
         public double Longitude { get; set; }
 
        
+
+
     }
 }

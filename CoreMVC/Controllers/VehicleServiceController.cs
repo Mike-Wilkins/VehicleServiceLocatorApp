@@ -94,5 +94,15 @@ namespace CoreMVC.Controllers
 
             return View("Index", vehicleServiceList);
         }
+
+        //GET: VehicleService/SearchByDistance
+        public async Task<IActionResult> SearchByDistance(string homepostcode, int distance)
+        {
+
+
+
+
+            return View("Index");
+        }
     }
 }

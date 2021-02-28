@@ -3366,6 +3366,7 @@
           "Geocoding.Google": "4.0.1",
           "Microsoft.EntityFrameworkCore": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3",
+          "X.PagedList": "8.0.7",
           "X.PagedList.EntityFramework": "1.0.1",
           "X.PagedList.Mvc.Core": "8.0.7"
         },
