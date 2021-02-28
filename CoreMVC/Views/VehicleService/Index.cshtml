@@ -15,7 +15,7 @@
 </p>
 
 <div class="row">
-    <div class="col-sm-5">
+    <div class="col-sm-4">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3" style="height: 60px;border-radius: 10px;background-color: #dedfe0">
             <form method="get" action="../VehicleService/Search">
                 <ul style="list-style:none">
@@ -25,6 +25,29 @@
             </form>
         </nav>
     </div>
+    <div class="col-sm-7">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3" style="height: 60px;border-radius: 10px;background-color: #dedfe0">
+            <form method="get" action="../VehicleService/SearchByDistance">
+                <ul style="list-style:none">
+                    <li style="float:left"><input type="text" id="homepostcode" name="homepostcode" placeholder="Enter your postcode" required /></li>
+
+                    <li style="float:left; margin-left:25px">
+                        <label> and distance:</label>
+                        <select id="distance" name="distance" style="height:28px; margin-left:10px">
+                            <option value="5">5 miles</option>
+                            <option value="10">10 miles</option>
+                            <option value="15">15 miles</option>
+                            <option value="20">20 miles</option>
+                        </select>
+                    </li>
+
+                    <li style="float:left; margin-left:35px"><input type="submit" value="Search" class="btn btn-primary btn-sm" /></li>
+                </ul>
+            </form>
+        </nav>
+    </div>
+
+
 </div>
 
 <table class="table table-hover table-striped">
@@ -39,6 +62,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.First().Postcode)
             </th>
+            <th>Distance</th>
+
+            
 
             <th></th>
         </tr>
@@ -46,23 +72,25 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    <a href="@item.Website">@item.Name Website</a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Postcode)
-                </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a href="@item.Website">@item.Name Website</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postcode)
+            </td>
+            <td>Distance</td>
+            
 
-                <td>
-                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a>
-                    @*<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm" style="margin-left:5px">Details</a>*@
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm" style="margin-left:5px">Delete</a>
-                </td>
-            </tr>
+            <td>
+                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a>
+                @*<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm" style="margin-left:5px">Details</a>*@
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm" style="margin-left:5px">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -9,4 +9,3 @@ C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\DataLaye
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.json
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.dev.json
 C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache
-C:\Users\Mike\Desktop\VehicleRepairShopLocator\VehicleServiceLocatorApp\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csprojAssemblyReference.cache
